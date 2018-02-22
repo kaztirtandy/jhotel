@@ -7,9 +7,9 @@
  */
 public class JHotel
 {
-    public void main(string[] args) {
+    public void main(String[] args) {
     }
-    public jhotel(){
+    public JHotel(){
     }
     
 }

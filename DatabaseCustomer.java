@@ -13,7 +13,7 @@ public class DatabaseCustomer
         return false;
     }
     public boolean removeCustomer(int id) {
-        return 0;
+        return false;
     }
     public String[] getCustomerDatabase() {
         return null;

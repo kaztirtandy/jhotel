@@ -14,7 +14,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     
-    public pesanan() {
+    public Pesanan() {
     }
     public double getBiaya() {
         return 0;
