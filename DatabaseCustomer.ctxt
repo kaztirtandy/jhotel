@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=DatabaseCustomer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseCustomer\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ kelas\ databasePesanan\ ini\ berisikan\ data\ dari\ pesanan\ yang\r\n\ sudah\ dipesan\ dan\ selesai\ dipesan\r\n\r\n\ @author\ Kazhka\ Tirtandy\r\n\ @version\ 1.7\r\n\ @since\ 2018-02-22\r\n
 comment1.params=baru
 comment1.target=boolean\ addCustomer(Customer)
+comment1.text=\r\n\ method\ ini\ berfungsi\ untuk\ menambah\ jumlah\ customer\ baru\r\n\ \r\n\ @pram\ baru\ Parameter\ dengan\ tipe\ data\ customer\r\n\ @return\ false\r\n
 comment2.params=id
 comment2.target=boolean\ removeCustomer(int)
+comment2.text=\r\n\ method\ ini\ berfungsi\ untuk\ menghilangkan\ customer\r\n\ \r\n\ @pram\ id\ Parameter\ dengan\ tipe\ data\ int\r\n\ @return\ false\r\n
 comment3.params=
 comment3.target=java.lang.String[]\ getCustomerDatabase()
+comment3.text=\r\n\ method\ ini\ berfungsi\ menampilkan\ nilai\ dari\ customer\ database\r\n\ \r\n\ @return\ null;\r\n
 numComments=4

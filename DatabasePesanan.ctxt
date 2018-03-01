@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.target=DatabasePesanan
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabasePesanan\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ kelas\ databasePesanan\ ini\ berisikan\ data\ dari\ pesanan\ yang\r\n\ sudah\ dipesan\ dan\ selesai\ dipesan\r\n\r\n\ @author\ Kazhka\ Tirtandy\r\n\ @version\ 1.7\r\n\ @since\ 2018-02-22\r\n
 comment1.params=baru
 comment1.target=boolean\ addPesanan(Pesanan)
+comment1.text=\r\n\ method\ ini\ berfungsi\ untuk\ menambahkan\ pesanan\ baru\r\n\ \r\n\ @return\ false\r\n
 comment2.params=pesan
 comment2.target=boolean\ removePesanan(Pesanan)
+comment2.text=\r\n\ method\ ini\ berfungsi\ untuk\ menghapus\ pesanan\ yang\ telah\ usai\r\n\ \r\n\ @pram\ pesan\ Parameter\ dengan\ tipe\ data\ pesanan\r\n\ @return\ false\r\n
 comment3.params=cust
 comment3.target=Pesanan\ getPesanan(Customer)
+comment3.text=\r\n\ method\ ini\ berfungsi\ untuk\ menampilkan\ pesanan\ dari\ customer\r\n\ \r\n\ @pram\ cust\ Parameter\ dengan\ tipe\ data\ customer\r\n\ @return\ null\r\n
 comment4.params=
 comment4.target=java.lang.String[]\ getPesananDatabase()
+comment4.text=\r\n\ method\ ini\ berfungsi\ untuk\ menampilkan\ database\ dari\ pesanan\r\n\ \r\n\ @return\ null\r\n
 comment5.params=pesan
 comment5.target=void\ pesananDibatalkan(Pesanan)
+comment5.text=\r\n\ method\ ini\ berfungsi\ untuk\ menambahkan\ pesanan\ yang\ telah\ selesai\r\n\ \r\n\ @pram\ pesan\ Parameter\ dengan\ tipe\ data\ pesanna\r\n\ @return\ tidak\ ada\r\n
 numComments=6

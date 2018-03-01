@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Lokasi
+comment0.text=\r\n\ Kelas\ lokasi\ ini\ merupakan\ kelas\ yang\ berfungsi\ untun\ mengambil\r\n\ dan\ memberikan\ nilai\ pada\ variabel\ x_coord,\ y_coord\ dan\ deskripsiLokasi\r\n\ @author\ Kazhka\ Tirtandy\r\n\ @version\ 1.7\r\n\ @since\ 2018-02-22\r\n
+comment1.params=x_coord\ y_coord\ deskripsiLokasi
+comment1.target=Lokasi(float,\ float,\ java.lang.String)
+comment1.text=\r\n\ method\ ini\ berfungsi\ untuk\ mendeklarasikan\ x_coord,\ y_coord\ dan\r\n\ deskripsiLokasi\ pada\ saat\ pembuatan\ kelas\r\n\ \r\n\ @pram\ x_coord\ Parameter\ dengan\ tipe\ data\ float\r\n\ @pram\ y_coord\ Parameter\ dengan\ tipe\ data\ float\r\n\ @pram\ deskripsiLokasi\ Parameter\ dengan\ tipe\ data\ String\r\n\ \r\n\ @return\ tidak\ ada\r\n\ \r\n
+comment2.params=
+comment2.target=float\ getX()
+comment2.text=\r\n\ method\ yang\ berfungsi\ untuk\ menampilkan\ nilai\ X\r\n\ \r\n\ @return\ x_coord\r\n
+comment3.params=
+comment3.target=float\ getY()
+comment3.text=\r\n\ method\ yang\ berfungsi\ untuk\ menampilkan\ nilai\ Y\r\n\ \r\n\ @return\ y_coord\r\n
+comment4.params=
+comment4.target=java.lang.String\ getDeskripsi()
+comment4.text=\r\n\ method\ yang\ berfungsi\ untuk\ menampilkan\ lokasi\r\n\ \r\n\ @return\ deskripsiLokasi\r\n
+comment5.params=x_coord
+comment5.target=void\ setX(float)
+comment5.text=\r\n\ method\ yang\ berfungsi\ untuk\ memberikan\ nilai\ X\r\n\ \r\n\ @pram\ x_coord\ Parameter\ dengan\ tipe\ data\ float\r\n\ @return\ tidak\ ada\r\n
+comment6.params=y_coord
+comment6.target=void\ setY(float)
+comment6.text=\r\n\ method\ yang\ berfungsi\ untuk\ memberikan\ nilai\ Y\r\n\ \r\n\ @pram\ y_coord\ Parameter\ dengan\ tipe\ data\ float\r\n\ @return\ tidak\ ada\r\n
+comment7.params=deskripsi
+comment7.target=void\ setDeskripsi(java.lang.String)
+comment7.text=\r\n\ method\ yang\ berfungsi\ untuk\ memberikan\ nilai\ lokasi\r\n\ \r\n\ @pram\ deskripsi\ Parameter\ dengan\ tipe\ data\ string\r\n\ @return\ tidak\ ada\r\n
+comment8.params=
+comment8.target=void\ printData()
+numComments=9
