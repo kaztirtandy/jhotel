@@ -16,6 +16,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
     
     /**
      * method ini berfungsi untuk mendeklarasikan biaya dan pelanggan
@@ -61,6 +62,10 @@ public class Pesanan
     public boolean getStatusSelesai() {
         return isSelesai;
     }
+    public Room getRoom() {
+        return kamar;
+    }
+        
     /**
      * method ini berfungsi untuk memberikan nilai pada biaya
      * 
@@ -94,6 +99,9 @@ public class Pesanan
      */
     public void setStatusSelesai(boolean diproses){
         isSelesai = diproses;
+    }
+    public void setRoom(Room kamar){
+        this.kamar = kamar;
     }
     public void printData() {
         System.out.println(biaya);
