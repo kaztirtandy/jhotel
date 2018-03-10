@@ -13,7 +13,7 @@ public class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String jenis_kamar;
+    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -46,11 +46,17 @@ public class Pesanan
     public Customer getPelanggan() {
         return pelanggan;
     }
+    public String getNamaPelanggan() {
+        return nama_pelanggan;
+    }
     /**
      * method ini berfungsi untuk menampilkan status yang telah diproses
      * 
      * @return isDiproses
      */
+    public TipeKamar getTipeKamar() {
+        return tipe_kamar;
+    }
     public boolean getStatusDiproses() {
         return isDiproses;
     }
@@ -82,6 +88,12 @@ public class Pesanan
     public void setPelanggan(Customer baru) {
         pelanggan = baru;
     }
+    public void setNamaPelanggan(String nama_pelanggan) {
+        this.nama_pelanggan = nama_pelanggan;
+    }
+    public void setTipeKamar(TipeKamar tipe_kamar) {
+        this.tipe_kamar = tipe_kamar;
+    }
     /**
      * method ini berfungsi untuk memberikan nilai pada status yang
      * telah diproses
@@ -104,7 +116,10 @@ public class Pesanan
         this.kamar = kamar;
     }
     public void printData() {
-        System.out.println(biaya);
+        pelanggan.printData();
+        System.out.println("Tipe Kamar: " + tipe_kamar);
+        System.out.println("Status Layanan Diproses: " + isDiproses);
+        System.out.println("Status Layanan Selesai: " + isSelesai);
     }
 
 }

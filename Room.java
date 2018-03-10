@@ -18,6 +18,14 @@ public class Room
     private Pesanan pesan;
     
     
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, Customer customer, double dailyTariff, StatusKamar status_kamar) {
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        this.isAvailable = isAvailable;
+        this.customer = customer;
+        this.dailyTariff = dailyTariff;
+        this.status_kamar = status_kamar;
+    }
     public Hotel getHotel() {
         return hotel;
     }
@@ -27,13 +35,13 @@ public class Room
     public String getNomorKamar() {
         return nomor_kamar;
     }
-    public boolean StatusAvailable() {
+    public boolean getStatusAvailable() {
         return isAvailable;
     }
-    public Customer Customer() {
+    public Customer getCustomer() {
         return customer;
     }
-    public double DailyTariff() {
+    public double getDailyTariff() {
         return dailyTariff;
     }
     public StatusKamar getStatusKamar() {
@@ -57,8 +65,8 @@ public class Room
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-    public void setDailyTariff(double dailytariff) {
-        dailyTariff = dailytariff;
+    public void setDailyTariff(double dailyTariff) {
+        this.dailyTariff = dailyTariff;
     }
     public void setStatusKamar(StatusKamar status_kamar) {
         this.status_kamar = status_kamar;
@@ -67,14 +75,12 @@ public class Room
         this.pesan = pesan;
     }
     public void printData() {
-        System.out.println(hotel);
-        System.out.println(id);
-        System.out.println(nomor_kamar);
-        System.out.println(isAvailable);
-        System.out.println(customer);
-        System.out.println(dailyTariff);
-        System.out.println(status_kamar);
-        System.out.println(pesan);
+        hotel.printData();
+        System.out.println("Nomor Kamar: " + nomor_kamar);
+        System.out.println("Tersedia: " + isAvailable);
+        customer.printData();
+        System.out.println("Harga: " + dailyTariff);
+        System.out.println("Status Kamar: " + status_kamar);
     }
     
 }
