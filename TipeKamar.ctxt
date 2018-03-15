@@ -4,5 +4,5 @@ comment0.text=\r\n\ Enumeration\ class\ TipeKamar\ -\ write\ a\ description\ of\
 comment1.params=tipe
 comment1.target=TipeKamar(java.lang.String)
 comment2.params=
-comment2.target=java.lang.String\ tipe()
+comment2.target=java.lang.String\ toString()
 numComments=3

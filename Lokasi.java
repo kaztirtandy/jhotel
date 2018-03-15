@@ -81,9 +81,9 @@ public class Lokasi
         deskripsiLokasi = deskripsi;
     }
     public void printData() {
-        System.out.println(x_coord);
-        System.out.println(y_coord);
-        System.out.println(deskripsiLokasi);
+        System.out.println("Koordinat X: " + x_coord);
+        System.out.println("Koordinat Y: " + y_coord);
+        System.out.println("Deskripsi: " + deskripsiLokasi);
     }
 
     

@@ -4,5 +4,5 @@ comment0.text=\r\n\ Enumeration\ class\ StatusKamar\ -\ write\ a\ description\ o
 comment1.params=status
 comment1.target=StatusKamar(java.lang.String)
 comment2.params=
-comment2.target=java.lang.String\ status()
+comment2.target=java.lang.String\ toString()
 numComments=3

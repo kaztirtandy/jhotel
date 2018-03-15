@@ -12,8 +12,7 @@ public class Pesanan
 {
     private double biaya;
     private Customer pelanggan;
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
+    private double jumlahHari;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -26,9 +25,11 @@ public class Pesanan
      * @pram pelanggan Parameter dengan tipe data Customer
      * @return tidak ada
      */
-    public Pesanan(double biaya, Customer pelanggan) {
-        this.biaya = biaya;
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar) {
         this.pelanggan = pelanggan;
+        this.jumlahHari = jumlahHari;
+        this.kamar = kamar;
+        this.biaya = jumlahHari * kamar.getDailyTariff();
     }
     /**
      * method ini berfungsi untuk menampilkan nilai biaya
@@ -46,17 +47,14 @@ public class Pesanan
     public Customer getPelanggan() {
         return pelanggan;
     }
-    public String getNamaPelanggan() {
-        return nama_pelanggan;
+    public double getJumlahHari() {
+        return jumlahHari;
     }
     /**
      * method ini berfungsi untuk menampilkan status yang telah diproses
      * 
      * @return isDiproses
      */
-    public TipeKamar getTipeKamar() {
-        return tipe_kamar;
-    }
     public boolean getStatusDiproses() {
         return isDiproses;
     }
@@ -77,8 +75,8 @@ public class Pesanan
      * 
      * @return tidak ada
      */
-    public void setBiaya(double biaya) {
-        this.biaya = biaya;
+    public void setBiaya() {
+        biaya = jumlahHari * kamar.getDailyTariff();
     }
     /**
      * method ini berfungsi untuk memberikan nilai pada pelanggan
@@ -88,11 +86,8 @@ public class Pesanan
     public void setPelanggan(Customer baru) {
         pelanggan = baru;
     }
-    public void setNamaPelanggan(String nama_pelanggan) {
-        this.nama_pelanggan = nama_pelanggan;
-    }
-    public void setTipeKamar(TipeKamar tipe_kamar) {
-        this.tipe_kamar = tipe_kamar;
+    public void setJumlahHari(double jumlahHari) {
+        this.jumlahHari = jumlahHari;
     }
     /**
      * method ini berfungsi untuk memberikan nilai pada status yang
@@ -116,10 +111,11 @@ public class Pesanan
         this.kamar = kamar;
     }
     public void printData() {
-        pelanggan.printData();
-        System.out.println("Tipe Kamar: " + tipe_kamar);
+        System.out.println("Nama: " + getPelanggan().getNama());
+        System.out.println("Jumlah Hari: " + jumlahHari);
         System.out.println("Status Layanan Diproses: " + isDiproses);
         System.out.println("Status Layanan Selesai: " + isSelesai);
+        System.out.println("Biaya: " + getBiaya());
     }
 
 }

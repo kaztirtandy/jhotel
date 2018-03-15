@@ -7,42 +7,44 @@
  */
 public class JHotel
 {
-    public void main(String[] args) {
-        Lokasi jakarta = new Lokasi(17, 12, "Jakarta");
-        Hotel haris = new Hotel("Haris", jakarta, 4);
-        Customer customer1 = new Customer(1, "Tirtan");
-        Pesanan pesanan1 = new Pesanan(17000000, customer1);
-        Room room1 = new Room(haris, "1712", true, customer1, 17000000, StatusKamar.Vacant);
-        System.out.println("Welcome to Jhotel");
-        System.out.println("Lokasi");
-        jakarta.printData();
-        System.out.println("Customer");
-        customer1.printData();
-        System.out.println("Hotel");
-        haris.printData();
-        System.out.println("=====Method 1=====");
-        Administrasi.pesananDitugaskan(pesanan1, room1);
-        pesanan1.printData();
-        room1.printData();
-        System.out.println("=====Method 2=====");
-        Administrasi.pesananDibatalkan(room1);
-        pesanan1.printData();
-        room1.printData();
-        System.out.println("=====Method 3=====");
-        Administrasi.pesananDitugaskan(pesanan1, room1);
-        Administrasi.pesananSelesai(room1);
-        pesanan1.printData();
-        room1.printData();
-        System.out.println("=====Method 4=====");
-        Administrasi.pesananDitugaskan(pesanan1, room1);
-        Administrasi.pesananDibatalkan(pesanan1);
-        pesanan1.printData();
-        room1.printData();
-        System.out.println("=====Method 5=====");
-        Administrasi.pesananDitugaskan(pesanan1, room1);
-        Administrasi.pesananSelesai(pesanan1);
-        pesanan1.printData();
-        room1.printData();
+    public static void main(String[] args) {
+       Lokasi depok = new Lokasi(17, 12, "Depok");
+       Hotel margo = new Hotel("Margo", depok, 4);
+       Customer customer1 = new Customer(1, "Dilan");
+       Room single1 = new SingleRoom(margo, "1712", true, StatusKamar.Vacant);
+       single1.setDailyTariff(121700);
+       Pesanan pesanan1 = new Pesanan(3, customer1, single1);
+       
+       depok.printData();
+       customer1.printData();
+       margo.printData();
+       System.out.println("\n");
+       Administrasi.pesananDitugaskan(pesanan1, single1);
+       pesanan1.printData();
+       single1.printData();
+       System.out.println("\n");
+       if(single1 instanceof DoubleRoom) {
+           System.out.println("Benar Double Room");
+        }
+        else {
+            System.out.println("Salah, bukan Double Room");
+        }
+       System.out.println("\n");
+       Room double1 = new DoubleRoom(margo, "2712", true, StatusKamar.Vacant);
+       Pesanan pesanan2 = new Pesanan(2, customer1, double1);
+       double1.setDailyTariff(171200);
+       pesanan2.setBiaya();
+       
+       Administrasi.pesananDitugaskan(pesanan2, double1);
+       pesanan2.printData();
+       double1.printData();
+       System.out.println("\n");
+       if(double1 instanceof DoubleRoom) {
+           System.out.println("Benar Double Room");
+        }
+        else {
+            System.out.println("Salah, bukan Double Room");
+        }
     }
     public JHotel(){  
         

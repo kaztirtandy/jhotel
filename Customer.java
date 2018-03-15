@@ -59,8 +59,8 @@ public class Customer
         this.nama = nama;
     }
     public void printData() {
-        System.out.println(nama);
-        System.out.println(id);
+        System.out.println("Nama: " + nama);
+        System.out.println("ID: " + id);
     }
 
 }

@@ -9,13 +9,13 @@ public enum StatusKamar
 {
     Booked("Booked"), Processed("Processed"), Vacant("Vacant");
     
-    public final String status;
+    public String status;
     
     StatusKamar(String status) {
         this.status = status;
     }
     
-    public String status() {
-        return status;
+    public String toString() {
+        return this.status;
     }
 }
