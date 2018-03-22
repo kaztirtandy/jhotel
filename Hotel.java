@@ -84,4 +84,10 @@ public class Hotel
         System.out.println("Deskripsi: " + lokasi.getDeskripsi());
         System.out.println("Bintang: " + bintang);
     }
+    public String toString() {
+        return ("\nHotel" + 
+        "\nNama Hotel: " + nama +
+        "\nDeskripsi: " + getLokasi().getDeskripsi() +
+        "\nBintang: " + bintang);
+    }
 }

@@ -8,14 +8,15 @@
 public enum StatusKamar
 {
     Booked("Booked"), Processed("Processed"), Vacant("Vacant");
-    
-    public String status;
-    
-    StatusKamar(String status) {
-        this.status = status;
+    private String deskripsi;
+   
+    StatusKamar(){
+    }
+    StatusKamar(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
     
     public String toString() {
-        return this.status;
+        return this.deskripsi;
     }
 }

@@ -9,7 +9,7 @@
  */
 public class DatabasePesanan
 {
-    private String[] list_pesanan;
+    private Pesanan list_pesanan;
     
     /**
      * method ini berfungsi untuk menambahkan pesanan baru
@@ -34,7 +34,7 @@ public class DatabasePesanan
      * @pram cust Parameter dengan tipe data customer
      * @return null
      */
-    public Pesanan getPesanan(Customer cust){
+    public static Pesanan getPesanan(Customer cust){
         return null;
     }
     /**
@@ -42,7 +42,7 @@ public class DatabasePesanan
      * 
      * @return null
      */
-    public String[] getPesananDatabase(){
+    public Pesanan getPesananDatabase(){
         return null;
     }
     /**

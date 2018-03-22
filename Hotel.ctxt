@@ -24,4 +24,6 @@ comment7.target=void\ setBintang(int)
 comment7.text=\r\n\ method\ ini\ berfungsi\ untuk\ memberikan\ nilai\ nama\r\n\ \r\n\ @pram\ nama\ Parameter\ dengan\ tipe\ data\ String\r\n\ @return\ tidak\ ada\r\n
 comment8.params=
 comment8.target=void\ printData()
-numComments=9
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

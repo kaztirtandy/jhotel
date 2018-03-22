@@ -8,6 +8,8 @@
  * @version 1.7
  * @since 2018-02-22
  */
+import java.util.Date;
+import java.util.*;
 public class Pesanan
 {
     private double biaya;
@@ -16,6 +18,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
     
     /**
      * method ini berfungsi untuk mendeklarasikan biaya dan pelanggan
@@ -25,11 +28,18 @@ public class Pesanan
      * @pram pelanggan Parameter dengan tipe data Customer
      * @return tidak ada
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar) {
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int tahun, int bulan, int tanggal) {
         this.pelanggan = pelanggan;
         this.jumlahHari = jumlahHari;
         this.kamar = kamar;
         this.biaya = jumlahHari * kamar.getDailyTariff();
+        this.tanggalPesan = new GregorianCalendar(tahun,bulan,tanggal).getTime();
+    }
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan) {
+        this.pelanggan = pelanggan;
+        this.jumlahHari = jumlahHari;
+        this.kamar = kamar;
+        this.tanggalPesan = tanggalPesan;
     }
     /**
      * method ini berfungsi untuk menampilkan nilai biaya
@@ -68,6 +78,9 @@ public class Pesanan
     }
     public Room getRoom() {
         return kamar;
+    }
+    public Date getTanggalPesan() {
+        return tanggalPesan;
     }
         
     /**
@@ -109,6 +122,9 @@ public class Pesanan
     }
     public void setRoom(Room kamar){
         this.kamar = kamar;
+    }
+    public void setTanggalPesan(Date tanggalPesan) {
+        this.tanggalPesan = tanggalPesan;
     }
     public void printData() {
         System.out.println("Nama: " + getPelanggan().getNama());

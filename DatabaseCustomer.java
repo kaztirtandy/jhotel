@@ -9,7 +9,7 @@
  */
 public class DatabaseCustomer
 {
-    private String[] list_customer;
+    private Customer list_customer;
     
     /**
      * method ini berfungsi untuk menambah jumlah customer baru
@@ -34,7 +34,7 @@ public class DatabaseCustomer
      * 
      * @return null;
      */
-    public String[] getCustomerDatabase() {
+    public Customer getCustomerDatabase() {
         return null;
     }
 }

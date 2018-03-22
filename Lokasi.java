@@ -80,11 +80,11 @@ public class Lokasi
     public void setDeskripsi (String deskripsi) {
         deskripsiLokasi = deskripsi;
     }
-    public void printData() {
-        System.out.println("Koordinat X: " + x_coord);
-        System.out.println("Koordinat Y: " + y_coord);
-        System.out.println("Deskripsi: " + deskripsiLokasi);
+    public String toString() {
+        return ("\nLokasi" + 
+        "\nKoordinat X: " +  x_coord +
+        "\nKoordinat Y: " + y_coord +
+        "\nDeskripsi Lokasi: " + deskripsiLokasi);
     }
-
     
 }

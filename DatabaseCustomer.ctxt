@@ -8,6 +8,6 @@ comment2.params=id
 comment2.target=boolean\ removeCustomer(int)
 comment2.text=\r\n\ method\ ini\ berfungsi\ untuk\ menghilangkan\ customer\r\n\ \r\n\ @pram\ id\ Parameter\ dengan\ tipe\ data\ int\r\n\ @return\ false\r\n
 comment3.params=
-comment3.target=java.lang.String[]\ getCustomerDatabase()
+comment3.target=Customer\ getCustomerDatabase()
 comment3.text=\r\n\ method\ ini\ berfungsi\ menampilkan\ nilai\ dari\ customer\ database\r\n\ \r\n\ @return\ null;\r\n
 numComments=4
