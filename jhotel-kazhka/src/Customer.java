@@ -27,13 +27,15 @@ public class Customer
      * @return tidak ada
      * 
      */
-    public Customer(String nama, int tanggal, int bulan, int tahun){
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email){
         this.id =  DatabaseCustomer.getLastCustomerId() + 1;
         this.nama = nama;
+        this.email = email;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
     }
-    public Customer(int id, String nama, Date dob){
+    public Customer(String nama, Date dob, String email){
         this.id = DatabaseCustomer.getLastCustomerId() + 1;
+        this.email = email;
         this.nama = nama;
         this.dob = dob;
     }

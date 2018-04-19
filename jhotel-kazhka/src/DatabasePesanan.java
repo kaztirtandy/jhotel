@@ -21,14 +21,14 @@ public class DatabasePesanan
      * 
      * @return false
      */
-    public static boolean addPesanan(Pesanan baru){
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException{
         if (getPesananAktif(baru.getPelanggan())==null) {
             PESANAN_DATABASE.add(baru);
             LAST_PESANAN_ID = baru.getID();
             return true;
         }
         else {
-            return false;
+            throw new PesananSudahAdaException(baru);
         }
     }
     /**
@@ -37,7 +37,7 @@ public class DatabasePesanan
      * @pram pesan Parameter dengan tipe data pesanan
      * @return false
      */
-    public static boolean removePesanan(Pesanan pesan) {
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException {
         Pesanan pesananFound = getPesanan(pesan.getID());
         boolean success = false;
 
@@ -46,7 +46,7 @@ public class DatabasePesanan
             PESANAN_DATABASE.remove(pesananFound);
             success = true;
         }
-        return success;
+        throw new PesananTidakDitemukanException(pesan.getPelanggan());
     }
     /**
      * method ini berfungsi untuk menampilkan pesanan dari customer

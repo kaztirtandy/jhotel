@@ -25,15 +25,20 @@ public class DatabaseCustomer
      * @pram baru Parameter dengan tipe data customer
      * @return false
      */
-    public static boolean addCustomer(Customer baru){
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException {
         boolean success = false;
 
-        if (getCustomer(baru.getID()) == null){
+        if (getCustomer(baru.getID()) == null) {
+            for (Customer c : CUSTOMER_DATABASE) {
+                if (c.getEmail().equals(baru.getEmail())) {
+                    throw new PelangganSudahAdaException(baru);
+                }
+            }
             CUSTOMER_DATABASE.add(baru);
             LAST_CUSTOMER_ID = baru.getID();
-            success = true;
+            return true;
         }
-        return success;
+        throw new PelangganSudahAdaException(baru);
     }
     public static Customer getCustomer(int id) {
         for(Customer c : CUSTOMER_DATABASE) {
@@ -49,7 +54,7 @@ public class DatabaseCustomer
      * @pram id Parameter dengan tipe data int
      * @return false
      */
-    public boolean removeCustomer(int id) {
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException {
         boolean success = false;
         Customer customerFound = getCustomer(id);
         int i;
@@ -57,14 +62,18 @@ public class DatabaseCustomer
         if (customerFound != null) {
             ArrayList<Pesanan> pesanansel = DatabasePesanan.getPesananDatabase();
             for(i = 0; i<pesanansel.size(); i++) {
-                if (pesanansel.get(i).getPelanggan() == customerFound) {
-                    DatabasePesanan.removePesanan(pesanansel.get(i));
+                try {
+                    if (pesanansel.get(i).getPelanggan() == customerFound) {
+                        DatabasePesanan.removePesanan(pesanansel.get(i));
+                    }
+                } catch (PesananTidakDitemukanException a){
+                    System.out.println(a.getPesan());
                 }
             }
             CUSTOMER_DATABASE.remove(customerFound);
             success = true;
         }
-        return success;
+        throw new PelangganTidakDitemukanException(id);
 
     }
 
