@@ -9,8 +9,8 @@ public class SingleRoom extends Room
 {
     private static TipeKamar TIPE_KAMAR = TipeKamar.Single;
     
-    public SingleRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar) {
-        super (hotel, nomor_kamar, status_kamar);
+    public SingleRoom(Hotel hotel, String nomor_kamar) {
+        super (hotel, nomor_kamar);
     }
     public TipeKamar getTipeKamar(){
         return TIPE_KAMAR;

@@ -31,7 +31,7 @@ public class Pesanan
      * @pram pelanggan Parameter dengan tipe data Customer
      * @return tidak ada
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Date tanggalPesan) {
+    public Pesanan(double jumlahHari, Customer pelanggan) {
         this.pelanggan = pelanggan;
         this.jumlahHari = jumlahHari;
         this.tanggalPesan = tanggalPesan;
@@ -149,12 +149,18 @@ public class Pesanan
         else if(!getStatusDiproses() && getStatusSelesai()){
             final_status="SELESAI";
         }
-        
-        return "Dibuat oleh" + getPelanggan().getNama()
-            + ". Proses booking untuk " + getRoom().getHotel().getNama()
-            + "kamar nomor " + getRoom().getNomorKamar()
-            + "dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString()
-            + ". Status: " + final_status + ".";
+
+        if (kamar != null) {
+            return ("\nDibuat oleh: " + pelanggan.getNama() +
+                    ". Proses booking untuk " + kamar.getHotel().getNama() +
+                    " kamar nomor " + kamar.getNomorKamar() +
+                    " dengan tipe kamar yang diinginkan " + kamar.getTipeKamar() +
+                    ". Status: " + final_status + ".");
+        }
+        else {
+            return ("\nDibuat oleh: " + pelanggan.getNama() +
+                    ". Status: " + final_status + ".");
+        }
     }
 
 }

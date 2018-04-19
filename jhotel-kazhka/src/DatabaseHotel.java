@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class DatabaseHotel
 {
-    private static ArrayList<Hotel> HOTEL_DATABASE;
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<>();
     private static int LAST_HOTEL_ID = 0;
 
 
@@ -31,21 +31,12 @@ public class DatabaseHotel
         return success;
     }
     public static Hotel getHotel(int id){
-        boolean exist = false;
-        int i;
-
-        for(i=0; i<HOTEL_DATABASE.size(); i++) {
-            if (HOTEL_DATABASE.get(i).getId() == id) {
-                exist = true;
-                break;
+        for(Hotel h : HOTEL_DATABASE) {
+            if (h.getId() == id) {
+                return h;
             }
         }
-        if (exist) {
-            return HOTEL_DATABASE.get(i);
-        }
-        else {
-            return null;
-        }
+        return null;
     }
     public static boolean removeHotel(int id) {
         Hotel hotelFound = getHotel(id);
@@ -53,9 +44,9 @@ public class DatabaseHotel
         boolean success = false;
 
         if (hotelFound != null) {
-            ArrayList<Room> rooms = DatabaseRoom.getRoomsFromHotel(hotelFound);
-            for (i = 0; i<rooms.size(); i++) {
-                DatabaseRoom.removeRoom(hotelFound,rooms.get(i).getNomorKamar());
+            ArrayList<Room> roomsel = DatabaseRoom.getRoomsFromHotel(hotelFound);
+            for (i = 0; i<roomsel.size(); i++) {
+                DatabaseRoom.removeRoom(hotelFound,roomsel.get(i).getNomorKamar());
             }
             HOTEL_DATABASE.remove(hotelFound);
             success = true;

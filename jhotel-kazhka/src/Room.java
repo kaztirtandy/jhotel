@@ -14,7 +14,7 @@ public abstract class Room
     private StatusKamar status_kamar;
     
     
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar) {
+    public Room(Hotel hotel, String nomor_kamar) {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
         this.status_kamar = StatusKamar.Vacant;

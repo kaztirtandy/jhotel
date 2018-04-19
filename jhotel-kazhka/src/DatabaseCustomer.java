@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class DatabaseCustomer
 {
-    private static ArrayList<Customer> CUSTOMER_DATABASE;
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
     private static int LAST_CUSTOMER_ID = 0;
 
 
@@ -25,7 +25,7 @@ public class DatabaseCustomer
      * @pram baru Parameter dengan tipe data customer
      * @return false
      */
-    public boolean addCustomer(Customer baru){
+    public static boolean addCustomer(Customer baru){
         boolean success = false;
 
         if (getCustomer(baru.getID()) == null){
@@ -35,22 +35,13 @@ public class DatabaseCustomer
         }
         return success;
     }
-    public Customer getCustomer(int id) {
-        boolean exist = false;
-
-        int i;
-        for( i=0; i<CUSTOMER_DATABASE.size(); i++) {
-            if (CUSTOMER_DATABASE.get(i).getID() == id) {
-                exist = true;
-                break;
+    public static Customer getCustomer(int id) {
+        for(Customer c : CUSTOMER_DATABASE) {
+            if (c.getID() == id) {
+                return c;
             }
         }
-        if (exist) {
-            return CUSTOMER_DATABASE.get(i);
-        }
-        else {
-            return null;
-        }
+        return null;
     }
     /**
      * method ini berfungsi untuk menghilangkan customer
@@ -64,10 +55,10 @@ public class DatabaseCustomer
         int i;
 
         if (customerFound != null) {
-            ArrayList<Pesanan> pesanans = DatabasePesanan.getPesananDatabase();
-            for(i = 0; i<pesanans.size(); i++) {
-                if (pesanans.get(i).getPelanggan() == customerFound) {
-                    DatabasePesanan.removePesanan(pesanans.get(i));
+            ArrayList<Pesanan> pesanansel = DatabasePesanan.getPesananDatabase();
+            for(i = 0; i<pesanansel.size(); i++) {
+                if (pesanansel.get(i).getPelanggan() == customerFound) {
+                    DatabasePesanan.removePesanan(pesanansel.get(i));
                 }
             }
             CUSTOMER_DATABASE.remove(customerFound);

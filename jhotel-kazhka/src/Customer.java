@@ -27,7 +27,7 @@ public class Customer
      * @return tidak ada
      * 
      */
-    public Customer(int id, String nama, int tanggal, int bulan, int tahun){
+    public Customer(String nama, int tanggal, int bulan, int tahun){
         this.id =  DatabaseCustomer.getLastCustomerId() + 1;
         this.nama = nama;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();

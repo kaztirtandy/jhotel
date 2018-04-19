@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class DatabaseRoom
 {
-    private static ArrayList<Room> ROOM_DATABASE;
+    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<>();
 
 
     public static  ArrayList<Room> getRoomDatabase() {
@@ -25,48 +25,33 @@ public class DatabaseRoom
         return berhasil;
     }
     public static Room getRoom(Hotel hotel,String nomor_kamar) {
-        boolean ada = false;
-        int i;
-
-        for(i=0; i<ROOM_DATABASE.size(); i++) {
-            if (ROOM_DATABASE.get(i).getHotel() == hotel && ROOM_DATABASE.get(i).getNomorKamar().equals(nomor_kamar)) {
-                ada = true;
-                break;
+        for(Room r : ROOM_DATABASE) {
+            if (r.getHotel() == hotel || r.getNomorKamar().equals(nomor_kamar)) {
+                return r;
             }
         }
-        if (ada) {
-            return ROOM_DATABASE.get(i);
-        }
-        else {
-            return null;
-        }
+        return null;
     }
     public static ArrayList<Room> getRoomsFromHotel (Hotel hotel) {
         ArrayList<Room> ROOMS_FROM_HOTEL = new ArrayList<>();
         int i;
         boolean ada = false;
 
-        for(i=0; i<ROOM_DATABASE.size(); i++) {
-            if (ROOM_DATABASE.get(i).getHotel() == hotel) {
-                ROOMS_FROM_HOTEL.add(ROOM_DATABASE.get(i));
-                ada = true;
+        for(Room r : ROOM_DATABASE) {
+            if (r.getHotel() == hotel) {
+                ROOMS_FROM_HOTEL.add(r);
             }
         }
-        if (ada) {
-            return ROOMS_FROM_HOTEL;
-        }
-        else {
-            return null;
-        }
+        return ROOMS_FROM_HOTEL;
     }
     public static ArrayList<Room> getVacantRooms () {
         boolean ada = false;
         ArrayList<Room> VACANT_ROOMS = new ArrayList<>();
         int i;
 
-        for(i=0; i<ROOM_DATABASE.size(); i++) {
-            if (ROOM_DATABASE.get(i).getStatusKamar() == StatusKamar.Vacant) {
-                VACANT_ROOMS.add(ROOM_DATABASE.get(i));
+        for(Room r : ROOM_DATABASE) {
+            if (r.getStatusKamar() == StatusKamar.Vacant) {
+                VACANT_ROOMS.add(r);
                 ada = true;
             }
         }

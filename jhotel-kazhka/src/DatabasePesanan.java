@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class DatabasePesanan
 {
-    private static ArrayList<Pesanan> PESANAN_DATABASE;
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<>();
     private static int LAST_PESANAN_ID = 0;
     
     /**
@@ -24,6 +24,7 @@ public class DatabasePesanan
     public static boolean addPesanan(Pesanan baru){
         if (getPesananAktif(baru.getPelanggan())==null) {
             PESANAN_DATABASE.add(baru);
+            LAST_PESANAN_ID = baru.getID();
             return true;
         }
         else {
@@ -54,20 +55,12 @@ public class DatabasePesanan
      * @return null
      */
     public static Pesanan getPesanan(int id){
-        boolean found = false;
-        int i;
-        for (i=0; i<PESANAN_DATABASE.size(); i++) {
-            if (PESANAN_DATABASE.get(i).getID() == id) {
-                found = true;
-                break;
+        for(Pesanan p : PESANAN_DATABASE) {
+            if (p.getID() == id) {
+                return p;
             }
         }
-        if (found == true) {
-            return PESANAN_DATABASE.get(i);
-        }
-        else {
-            return null;
-        }
+        return null;
     }
 
     /**
@@ -76,39 +69,23 @@ public class DatabasePesanan
      * @return null
      */
     public static Pesanan getPesanan(Room kamar) {
-        boolean found = false;
-        int i;
-        for (i=0; i<PESANAN_DATABASE.size(); i++) {
-            if (PESANAN_DATABASE.get(i).getRoom() == kamar) {
-                found = true;
-                break;
+        for(Pesanan p : PESANAN_DATABASE) {
+            if (p.getRoom() == kamar) {
+                return p;
             }
         }
-        if (found == true) {
-            return PESANAN_DATABASE.get(i);
-        }
-        else {
-            return null;
-        }
+        return null;
 
     }
     public static Pesanan getPesananAktif(Customer pelanggan) {
-        boolean found = false;
-        int i;
-        for (i=0; i<PESANAN_DATABASE.size(); i++) {
-            if (PESANAN_DATABASE.get(i).getPelanggan() == pelanggan ) {
-                if (PESANAN_DATABASE.get(i).getStatusAktif() == true ) {
-                    found = true;
-                    break;
+        for(Pesanan p: PESANAN_DATABASE) {
+            if (p.getPelanggan() == pelanggan) {
+                if(p.getStatusAktif()) {
+                    return p;
                 }
             }
         }
-        if (found == true) {
-            return PESANAN_DATABASE.get(i);
-        }
-        else {
-            return null;
-        }
+        return null;
     }
     public static ArrayList<Pesanan> getPesananDatabase(){
         return PESANAN_DATABASE;
