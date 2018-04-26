@@ -13,10 +13,11 @@ import java.text.*;
 import java.util.*;
 public class Customer
 {
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
     
     /**
      * method ini berfungsi untuk mendeklarasikan id dan nama pada saat
@@ -27,17 +28,19 @@ public class Customer
      * @return tidak ada
      * 
      */
-    public Customer(String nama, int tanggal, int bulan, int tahun, String email){
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password){
         this.id =  DatabaseCustomer.getLastCustomerId() + 1;
         this.nama = nama;
         this.email = email;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
+        this.password = password;
     }
-    public Customer(String nama, Date dob, String email){
+    public Customer(String nama, Date dob, String email, String password){
         this.id = DatabaseCustomer.getLastCustomerId() + 1;
         this.email = email;
         this.nama = nama;
         this.dob = dob;
+        this.password = password;
     }
     /**
      * method ini berfungsi untuk menampilkan id
@@ -62,6 +65,9 @@ public class Customer
         SimpleDateFormat ft = new SimpleDateFormat ("dd MMMM yyyy");
         System.out.println("DOB: " + ft.format(dob));
         return dob;
+    }
+    public String getPassword() {
+        return password;
     }
     /**
      * method ini berfungsi untuk memberikan nilai id
@@ -95,6 +101,9 @@ public class Customer
     public void printData() {
         System.out.println("Nama: " + nama);
         System.out.println("ID: " + id);
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
     public String toString() {
         if(DatabasePesanan.getPesananAktif(this) == null)

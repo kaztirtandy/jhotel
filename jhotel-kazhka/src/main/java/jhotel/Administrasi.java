@@ -21,30 +21,31 @@ public class Administrasi
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
+     * @param    a sample parameter for a method
      * @return    the sum of x and y
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar) {
-        pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(true);
-        pesan.setRoom(kamar);
-        kamar.setStatusKamar(StatusKamar.Booked);
+        if (kamar.getStatusKamar().equals(StatusKamar.Vacant)) {
+            pesan.setStatusSelesai(false);
+            pesan.setStatusDiproses(true);
+            pesan.setRoom(kamar);
+        }else {
+            pesan.setStatusAktif(false);
+        }
     }
     public static void pesananDibatalkan(Room kamar) {
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
 
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
         kamar.setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusAktif(false);
     }
     public static void pesananSelesai(Room kamar) {
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
 
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
         kamar.setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusAktif(false);
     }
@@ -54,7 +55,6 @@ public class Administrasi
         kamar.setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
         pesan.setStatusAktif(false);
     }
     public static void pesananSelesai(Pesanan pesan) {
@@ -63,7 +63,6 @@ public class Administrasi
         kamar.setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
         pesan.setStatusAktif(false);
     }
     

@@ -56,7 +56,7 @@ public abstract class Room
             System.out.println("Tipe Kamar: " + getTipeKamar());
             System.out.println("Harga Kamar: " + dailyTariff);
             System.out.println("Status Kamar: " + status_kamar);
-            System.out.println("Pelanggan: " + DatabasePesanan.getPesanan(this).getPelanggan().getNama());
+            System.out.println("Pelanggan: " + DatabasePesanan.getPesananAktif(this).getPelanggan().getNama());
         }
         return null;
     }
